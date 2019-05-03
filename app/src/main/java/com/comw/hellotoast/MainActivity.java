@@ -29,6 +29,14 @@ public class MainActivity extends AppCompatActivity {
         if(mShowCount != null) {
             mShowCount.setText(Integer.toString(mCount));
         }
+        View zeroButton = (View) findViewById(R.id.button_zero);
+        zeroButton.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
 
+    }
+
+    public void dropCount(View view) {
+        mCount = 0;
+        mShowCount.setText(Integer.toString(mCount));
+        view.setBackgroundColor(getResources().getColor(R.color.zeroButton));
     }
 }

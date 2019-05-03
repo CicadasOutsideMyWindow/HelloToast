@@ -5,35 +5,58 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    tools:layout_editor_absoluteY="89dp">
+    tools:layout_editor_absoluteY="81dp">
 
     <Button
         android:id="@+id/button_toast"
-        android:layout_width="377dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:background="@color/colorPrimary"
         android:onClick="showToast"
         android:text="@string/button_label_toast"
         android:textColor="@android:color/white"
-        android:textSize="60sp"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        tools:layout_editor_absoluteY="23dp" />
+        app:layout_constraintBottom_toTopOf="@+id/barrier2"
+        app:layout_constraintEnd_toStartOf="@+id/button_zero"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_zero"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:background="#cccccc"
+        android:onClick="dropCount"
+        android:text="@string/zero"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/barrier2"
+        app:layout_constraintEnd_toStartOf="@+id/button_count"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_toast"
+        />
 
     <Button
         android:id="@+id/button_count"
-        android:layout_width="378dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:background="@color/colorPrimary"
+        android:background="#3f51b5"
         android:onClick="countUp"
         android:text="@string/button_label_count"
         android:textColor="@android:color/white"
-        android:textSize="60sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button_toast"
-        app:layout_constraintStart_toEndOf="@+id/button_toast" />
+        app:layout_constraintBottom_toTopOf="@+id/barrier2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_zero" />
 
     <TextView
         android:id="@+id/show_count"
@@ -41,27 +64,25 @@
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@android:color/holo_orange_light"
+        android:background="#33e4ff"
         android:gravity="center_vertical|center_horizontal"
         android:text="@string/count_initial_value"
         android:textColor="@color/colorPrimary"
-        android:textSize="120sp"
+        android:textSize="160sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/barrier2"
-        app:layout_constraintEnd_toEndOf="@+id/barrier"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/button_toast" />
+        app:layout_constraintBottom_toTopOf="@+id/button_zero"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
+        app:layout_constraintGuide_begin="8dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline2"
@@ -75,14 +96,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="left"
-        tools:layout_editor_absoluteX="1280dp" />
+        tools:layout_editor_absoluteX="320dp" />
 
     <android.support.constraint.Barrier
         android:id="@+id/barrier2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="top"
-        tools:layout_editor_absoluteY="663dp" />
+        tools:layout_editor_absoluteY="452dp" />
 
     <android.support.constraint.Group
         android:id="@+id/group"
